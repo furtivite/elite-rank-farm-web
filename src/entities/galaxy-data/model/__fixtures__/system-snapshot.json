@@ -1,0 +1,99 @@
+{
+  "id": "633608147658",
+  "name": "Col 285 Sector NC-M c7-2",
+  "x": -7.3125,
+  "y": -228,
+  "z": -60.15625,
+  "regionIds": ["imperial-ngalinn"],
+  "updatedAt": "2026-09-05T18:20:31Z",
+  "systemFactions": [
+    {
+      "name": "HIP 11241 Patrons of Law",
+      "allegiance": "Empire"
+    },
+    {
+      "name": "Nationals of HIP 6108",
+      "allegiance": "Empire"
+    },
+    {
+      "name": "Ngalinn Jet Natural Incorporated",
+      "allegiance": "Empire"
+    },
+    {
+      "name": "Society of Ngalinn",
+      "allegiance": "Independent"
+    }
+  ],
+  "systemFactionSummary": {
+    "imperial": 3,
+    "federal": 0,
+    "alliance": 0,
+    "independent": 1,
+    "other": 0
+  },
+  "stations": [
+    {
+      "id": "4216414211",
+      "systemId": "633608147658",
+      "name": "Alcock Landing",
+      "type": "Outpost",
+      "distanceToArrivalLs": 214.672493,
+      "maxPadSize": "M",
+      "hasMissionBoard": true,
+      "controllingFaction": {
+        "name": "Nationals of HIP 6108",
+        "allegiance": "Empire"
+      },
+      "missionProviderFactions": {
+        "status": "unknown"
+      },
+      "updatedAt": "2026-09-06T01:55:40Z"
+    },
+    {
+      "id": "4220479491",
+      "systemId": "633608147658",
+      "name": "Garg Agricultural Collection",
+      "bodyName": "Col 285 Sector NC-M c7-2 A 3",
+      "star": {
+        "name": "Col 285 Sector NC-M c7-2 A",
+        "isMain": true,
+        "source": "dump"
+      },
+      "type": "Settlement",
+      "distanceToArrivalLs": 214.53715,
+      "maxPadSize": "L",
+      "hasMissionBoard": true,
+      "controllingFaction": {
+        "name": "HIP 11241 Patrons of Law",
+        "allegiance": "Empire"
+      },
+      "missionProviderFactions": {
+        "status": "unknown"
+      },
+      "updatedAt": "2026-09-06T01:55:40Z"
+    },
+    {
+      "id": "4230534403",
+      "systemId": "633608147658",
+      "name": "Odysseus Horizons",
+      "bodyName": "Col 285 Sector NC-M c7-2 A 3",
+      "star": {
+        "name": "Col 285 Sector NC-M c7-2 A",
+        "isMain": true,
+        "source": "dump"
+      },
+      "type": "CraterOutpost",
+      "distanceToArrivalLs": 214.674727,
+      "maxPadSize": "L",
+      "hasMissionBoard": true,
+      "controllingFaction": {
+        "name": "HIP 11241 Patrons of Law",
+        "allegiance": "Empire"
+      },
+      "missionProviderFactions": {
+        "status": "unknown"
+      },
+      "updatedAt": "2026-09-06T01:55:40Z"
+    }
+  ]
+}

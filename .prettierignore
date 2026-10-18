@@ -1,0 +1,5 @@
+*.md
+contracts/
+node_modules/
+out/
+.next/

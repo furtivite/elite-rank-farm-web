@@ -1,0 +1,1 @@
+export { Bilingual } from './Bilingual'

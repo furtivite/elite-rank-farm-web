@@ -1,0 +1,1 @@
+export { OtherStarsPage } from './OtherStarsPage'

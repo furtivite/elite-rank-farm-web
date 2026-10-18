@@ -1,0 +1,6 @@
+export { RepeatIcon } from './RepeatIcon'
+export { SearchIcon } from './SearchIcon'
+export { SettingsIcon } from './SettingsIcon'
+export { SunIcon } from './SunIcon'
+export { TrashIcon } from './TrashIcon'
+export { UserIcon } from './UserIcon'
