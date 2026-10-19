@@ -49,7 +49,8 @@
               "unknown-system",
               "legacy-galaxy",
               "test-build",
-              "future-observation"
+              "future-observation",
+              "held"
             ]
           }
         }
