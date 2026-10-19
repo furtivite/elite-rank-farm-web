@@ -1,7 +1,7 @@
 'use client'
 
 import cn from 'classnames'
-import { useId, useSyncExternalStore } from 'react'
+import { useSyncExternalStore } from 'react'
 import {
   getReturnLegsSnapshot,
   getServerReturnLegsSnapshot,
@@ -70,32 +70,19 @@ export function MissionReturnControls({
         : BUTTON_VARIANT_CLASS.secondary,
     )
 
+  if (leg === undefined && !canMark) {
+    return null
+  }
+
   const markLabel = t('basket.return', { station: stationName })
-  const disabled = leg === undefined && !canMark
-  const reasonId = useId()
 
   return (
     <span className="inline-flex items-center gap-2">
-      <label
-        className={cn(shape(leg !== undefined), disabled && 'cursor-not-allowed opacity-60')}
-        title={markLabel}
-      >
-        <input
-          type="checkbox"
-          checked={leg !== undefined}
-          disabled={disabled}
-          onChange={toggle}
-          aria-describedby={disabled ? reasonId : undefined}
-          className="sr-only"
-        />
+      <label className={shape(leg !== undefined)} title={markLabel}>
+        <input type="checkbox" checked={leg !== undefined} onChange={toggle} className="sr-only" />
         <span className="sr-only">{markLabel}</span>
         <RepeatIcon />
       </label>
-      {disabled && (
-        <span id={reasonId} className="text-xs text-warm-700 dark:text-warm-300">
-          {t('basket.returnNeedsPosition')}
-        </span>
-      )}
 
       {leg === undefined ? null : (
         <label className={shape(leg.extraRun === true)} title={t('basket.returnExtraRun')}>

@@ -72,16 +72,8 @@ test('включённый «+1» отмечен для screen reader, а не �
   assert.equal(((await render(docked)).match(/checked=""/g) ?? []).length, 2)
 })
 
-test('без известной станции отмечать нечем, и кнопка говорит почему', () => {
-  const html = renderFirstFrame({ currentSystem: null, currentStation: null })
-
-  assert.match(html, /disabled=""/)
-  const reason =
-    /<span id="([^"]+)"[^>]*>nowhere to return to: the agent has not said where you are<\/span>/.exec(
-      html,
-    )
-  assert.ok(reason, html)
-  assert.match(html, new RegExp(`aria-describedby="${reason[1]}"`))
+test('без известной станции кнопки нет вовсе', () => {
+  assert.equal(renderFirstFrame({ currentSystem: null, currentStation: null }), '')
 })
 
 test('снять пометку можно и без известного положения', async () => {
@@ -92,7 +84,9 @@ test('снять пометку можно и без известного пол
     },
   })
 
-  assert.doesNotMatch(await render({ currentSystem: null, currentStation: null }), /disabled=""/)
+  const html = await render({ currentSystem: null, currentStation: null })
+  assert.equal((html.match(/checked=""/g) ?? []).length, 1, html)
+  assert.doesNotMatch(html, /disabled=""/)
 })
 
 test('ключ станции не склеивает соседей', () => {

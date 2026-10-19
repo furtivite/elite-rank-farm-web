@@ -5,7 +5,11 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { renderInDom } from '@/shared/test/renderInDom'
 import { returnLegKey, writeReturnLegs } from '@/entities/mission-store'
 import type { UseCommanderStateResult } from '@/entities/commander-state'
-import type { StoredMission, UseMissionStoreResult } from '@/entities/mission-store'
+import type {
+  CommanderPosition,
+  StoredMission,
+  UseMissionStoreResult,
+} from '@/entities/mission-store'
 import { MissionBasket } from '@/widgets/mission-basket'
 
 let counter = 0
@@ -57,12 +61,13 @@ function commanderStub(
 function render(
   missions: StoredMission[],
   commander: UseCommanderStateResult = commanderStub(),
+  position: CommanderPosition | null = null,
 ): string {
   return renderToStaticMarkup(
     React.createElement(MissionBasket, {
       regionKey: 'imperial',
       store: store(missions),
-      position: null,
+      position,
       commander,
       jumpOrigin: null,
     }),
@@ -263,7 +268,10 @@ test('без id станции переключателя нет даже у а�
 })
 
 test('кнопка возврата видна в строке станции, а не в раскрытии (109)', () => {
-  const html = render([mission()])
+  const html = render([mission()], commanderStub(), {
+    systemName: 'Ngalinn',
+    stationName: 'Gloss Gateway',
+  })
 
   const stationBlock = html.slice(html.indexOf('Fernandes Base'))
   const beforeDetails = stationBlock.slice(0, stationBlock.indexOf('<details'))

@@ -645,7 +645,6 @@ export const en = {
   'basket.return': 'Return trip from {station}',
   'basket.returnFlight': 'Return flight',
   'basket.returnDone': 'Done',
-  'basket.returnNeedsPosition': 'nowhere to return to: the agent has not said where you are',
   'basket.returnExtraRun': 'after handing this in, one more run back to the start remains',
   'basket.closeTime': '{missions}, {stations}, ~{minutes} min',
   'basket.closeTimeShort': '~{minutes} min there',

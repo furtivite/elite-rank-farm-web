@@ -636,7 +636,6 @@ export const ru: Record<keyof typeof en, string> = {
   'basket.return': 'Возвратный рейс со станции {station}',
   'basket.returnFlight': 'Возвратный полёт',
   'basket.returnDone': 'Выполнен',
-  'basket.returnNeedsPosition': 'непонятно, откуда возвращаться: агент не сказал, где вы',
   'basket.returnExtraRun': 'после сдачи останется ещё один рейс на стартовую станцию',
   'basket.closeTime': '{missions}, {stations}, ~{minutes} мин',
   'basket.closeTimeShort': '~{minutes} мин туда',
